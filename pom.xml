@@ -7,7 +7,7 @@
 
     <groupId>com.withwindstudio</groupId>
     <artifactId>WindChat</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-beta.2</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -48,7 +48,7 @@
     </dependencies>
 
     <build>
-        <finalName>${project.artifactId}-${project.version}-beta.1</finalName>
+        <finalName>${project.artifactId}-${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

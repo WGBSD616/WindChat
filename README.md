@@ -4,8 +4,8 @@
 
 ## 版本说明
 
-当前版本 `WindChat-1.0.0-beta.1` 处在公测状态，可能不稳定，不建议用于生产环境。  
-大家可以积极进行测试，提供反馈和建议。
+当前版本 `1.0.0-beta.2` 处在公测状态，可能不稳定，不建议用于生产环境。  
+欢迎大家积极测试，提供反馈和建议。
 
 ## 分支说明
 
@@ -21,10 +21,11 @@
 - **PlaceholderAPI 支持** — 在消息格式中使用占位符
 - **权限控制** — bypass 权限、reload 权限
 - **热重载** — `/wchat reload` 重载配置
+- **配置校验** — 启动时自动检查配置文件正确性
 
 ## 安装
 
-1. 从 **[Releases](https://github.com/wgbsd616/WindChat/releases)** 页面下载 `WindChat-1.0.0-beta.1.jar`
+1. 从 **[Releases](https://github.com/wgbsd616/WindChat/releases)** 页面下载 `WindChat-1.0.0-beta.2.jar`
 2. 放入服务器的 `plugins/` 目录
 3. 重启服务器
 4. 编辑 `plugins/WindChat/config.yml` 进行配置
@@ -38,14 +39,14 @@
 
 ## 权限
 
-| 权限 | 默认值    | 说明 |
+| 权限 | 默认值 | 说明 |
 |------|--------|------|
-| `windchat.reload` | OP可用   | 允许使用 `/wchat reload` |
-| `windchat.bypass` | 任何人不可用 | 绕过敏感词检测 |
+| `windchat.reload` | OP | 允许使用 `/wchat reload` |
+| `windchat.bypass` | false | 绕过敏感词检测 |
 
 ## 配置说明
 
-### 消息格式配置示例
+### 消息格式
 
 ```yaml
 chat_format:
@@ -58,7 +59,7 @@ chat_format:
 | `{player}` | 玩家名称 |
 | `{message}` | 消息内容 |
 
-### 敏感词配置示例
+### 敏感词
 
 ```yaml
 sensitive:
@@ -68,15 +69,31 @@ sensitive:
     "敏感词2": 2
 ```
 
-### 动作类型配置示例
+### 动作类型
 
 | 动作 | 说明 |
 |------|------|
-| `change` | 替换敏感词为指定字符 |
+| `change` | 将敏感词替换为 `*` |
 | `block` | 屏蔽整条消息 |
 | `message` | 向触发者发送提示消息 |
 | `broadcast` | 向全服广播消息 |
 | `command` | 执行控制台命令 |
+
+### 高级设置
+
+```yaml
+chat_listener_priority: 2
+```
+
+| 数值 | 对应优先级 |
+|------|-----------|
+| 1 | LOWEST |
+| 2 | LOW |
+| 3 | NORMAL |
+| 4 | HIGH |
+| 5 | HIGHEST |
+
+数值越小，优先级越高（先执行）。修改后需**重启服务器**生效，`/wchat reload` 无法重载此项。
 
 ## 构建
 
@@ -84,16 +101,16 @@ sensitive:
 mvn clean package
 ```
 
-生成的 JAR 文件位于 `target/WindChat-1.0.0-beta.1.jar`
+生成的 JAR 文件位于 `target/WindChat-1.0.0-beta.2.jar`
 
 ## 依赖
 
 - **Paper API 1.21.1+** — 服务端核心
-- **PlaceholderAPI （可选）** — 占位符支持
+- **PlaceholderAPI（可选）** — 占位符支持
 
 ## 颜色代码
 
-配置文件使用 `§` 作为颜色代码前缀
+配置文件使用 `§` 作为颜色代码前缀。
 
 ## 许可证
 

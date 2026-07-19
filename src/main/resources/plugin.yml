@@ -1,17 +1,17 @@
-name: WindChat
-version: 1.0.0
-main: top.withwindstudio.windchat.WindChat
+name: 'WindChat'
+version: '1.0.0-beta.2'
+main: 'top.withwindstudio.windchat.WindChat'
 api-version: '1.21.1'
 
 authors:
-  - WithWindStudio
+  - 'WithWindStudio'
 
 description: 'A simple chat plugin.'
 
 softdepend:
-  - PlaceholderAPI
+  - 'PlaceholderAPI'
 
-load: POSTWORLD
+load: 'POSTWORLD'
 
 commands:
   wchat:
@@ -21,7 +21,7 @@ commands:
 permissions:
   windchat.reload:
     description: 'Reload plugin permission'
-    default: op
+    default: 'op'
 
   windchat.bypass:
     description: 'Bypass the sensitive word filter'

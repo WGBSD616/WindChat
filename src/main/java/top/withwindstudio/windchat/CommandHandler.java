@@ -15,7 +15,7 @@ public class CommandHandler implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NonNull CommandSender sender, @NonNull Command command, @NonNull String label, String[] args) {
-        if (args.length == 0) {
+        if (args == null || args.length == 0) {
             sender.sendMessage("§c用法: /wchat reload");
             return true;
         }
@@ -26,7 +26,6 @@ public class CommandHandler implements CommandExecutor {
                 return true;
             }
             plugin.reloadPlugin();
-            sender.sendMessage("§a配置已重载！");
             return true;
         }
 
