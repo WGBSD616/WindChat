@@ -38,7 +38,8 @@ public final class WindChat extends JavaPlugin {
         createDefaultResources();
         reloadConfig();
         initLegacyComponentSerializer();
-        if (checkConfigValid()) {
+        boolean configValid = checkConfigValid();
+        if (configValid) {
             if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
                 papiEnabled = true;
                 Bukkit.getConsoleSender().sendMessage("§f[§aWindChat§f] §fPlaceholderAPI 已启用");
@@ -48,6 +49,8 @@ public final class WindChat extends JavaPlugin {
             loadBadWords();
             initSensitiveWordBs();
             registerChatListener();
+        } else {
+            raiseError("插件加载失败：配置文件检查未通过", false);
         }
         PluginCommand wchatCommand = getCommand("wchat");
         if (wchatCommand != null) {
@@ -82,6 +85,7 @@ public final class WindChat extends JavaPlugin {
             Bukkit.getConsoleSender().sendMessage("§f[§aWindChat§f] §a配置已重载");
         } else {
             Bukkit.getConsoleSender().sendMessage("§f[§aWindChat§f] §c配置重载失败，请检查配置文件");
+            Bukkit.getConsoleSender().sendMessage("§f[§aWindChat§f] §e当前仍使用旧配置运行");
         }
     }
 
