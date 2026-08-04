@@ -4,7 +4,7 @@ package top.withwindstudio.windchat;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.jspecify.annotations.NonNull;
+import org.jetbrains.annotations.NotNull;
 
 public class CommandHandler implements CommandExecutor {
     private final WindChat plugin;
@@ -14,7 +14,7 @@ public class CommandHandler implements CommandExecutor {
     }
 
     @Override
-    public boolean onCommand(@NonNull CommandSender sender, @NonNull Command command, @NonNull String label, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
         if (args == null || args.length == 0) {
             sender.sendMessage("§c用法: /wchat reload");
             return true;
