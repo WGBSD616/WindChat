@@ -148,7 +148,7 @@ public class ChatListener implements Listener {
         boolean formatEnable = plugin.getConfig().getBoolean("chat_format.enable", true);
         String playerName = player.getName();
         if (!formatEnable) {
-            return Component.text("<{player}> {message}".replace("{player}", playerName).replace("{message}", message));
+            return Component.text(String.format("<%s> %s", playerName, message));
         }
         String formatTemplate = plugin.getConfig().getString("chat_format.format", "&a[&f玩家消息&a]&r {player}：{message}");
         if (plugin.isPapiEnabled()) {
