@@ -7,7 +7,7 @@
 
     <groupId>top.withwindstudio</groupId>
     <artifactId>WindChat</artifactId>
-    <version>1.0.0-beta.2</version>
+    <version>1.0.0-beta.3</version>
     <packaging>jar</packaging>
 
     <properties>

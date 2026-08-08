@@ -5,7 +5,7 @@
 ## 版本说明
 
 > [!WARNING]
-> 当前版本 1.0.0-beta.2 处在公测状态，可能不稳定，**不建议用于生产环境**。
+> 当前版本 1.0.0-beta.3 处在公测状态，可能不稳定，**不建议用于生产环境**。
 > 欢迎大家积极测试，提供反馈和建议。
 
 ## 分支说明
@@ -26,7 +26,7 @@
 
 ## 安装
 
-1. 从 **[Releases](https://github.com/wgbsd616/WindChat/releases)** 页面下载 `WindChat-1.0.0-beta.2.jar`
+1. 从 **[Releases](https://github.com/wgbsd616/WindChat/releases)** 页面下载 `WindChat-1.0.0-beta.3.jar`
 2. 放入服务器的 `plugins/` 目录
 3. 重启服务器
 4. 编辑 `plugins/WindChat/config.yml` 进行配置
@@ -102,7 +102,7 @@ chat_listener_priority: 2
 mvn clean package
 ```
 
-生成的 JAR 文件位于 `target/WindChat-1.0.0-beta.2.jar`
+生成的 JAR 文件位于 `target/WindChat-1.0.0-beta.3.jar`
 
 ## 依赖
 

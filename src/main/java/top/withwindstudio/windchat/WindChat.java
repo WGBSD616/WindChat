@@ -34,7 +34,7 @@ public final class WindChat extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Bukkit.getConsoleSender().sendMessage("§f[§aWindChat§f] §aWindChat v1.0.0-beta.2");
+        Bukkit.getConsoleSender().sendMessage("§f[§aWindChat§f] §aWindChat v1.0.0-beta.3");
         Bukkit.getConsoleSender().sendMessage("§f[§aWindChat§f] §a插件正在加载...");
         createDefaultResources();
         reloadConfig();
