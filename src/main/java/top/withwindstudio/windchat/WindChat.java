@@ -1,13 +1,9 @@
 // WindChat.java
 package top.withwindstudio.windchat;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
 import com.github.houbb.sensitive.word.bs.SensitiveWordBs;
+import io.papermc.paper.event.player.AsyncChatEvent;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.Bukkit;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.configuration.ConfigurationSection;
@@ -15,11 +11,16 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.RegisteredListener;
 import org.bukkit.plugin.java.JavaPlugin;
-import io.papermc.paper.event.player.AsyncChatEvent;
-import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public final class WindChat extends JavaPlugin {
-    public final Map<String, Integer> badWords = new HashMap<>();
+    public final Map<String, Integer> badWords = new ConcurrentHashMap<>();
     private boolean papiEnabled = false;
     private static final EventPriority[] PRIORITIES = {
             EventPriority.LOWEST,

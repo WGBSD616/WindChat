@@ -1,18 +1,18 @@
 // ChatListener.java
 package top.withwindstudio.windchat;
 
+import io.papermc.paper.event.player.AsyncChatEvent;
+import me.clip.placeholderapi.PlaceholderAPI;
 import net.kyori.adventure.text.Component;
-
-import java.util.Objects;
-import java.util.regex.Pattern;
-import java.util.List;
-import java.util.Map;
+import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
-import io.papermc.paper.event.player.AsyncChatEvent;
-import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
-import me.clip.placeholderapi.PlaceholderAPI;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.regex.Pattern;
 
 public class ChatListener implements Listener {
     private final WindChat plugin;
